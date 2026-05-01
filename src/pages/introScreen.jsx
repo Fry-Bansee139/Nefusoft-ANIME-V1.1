@@ -151,8 +151,13 @@ const IntroScreen = ({ onComplete }) => {
                   <span className="intro-subtext-prefix">⊕</span>
                   <TypeWriter text="alfeent.vercel.app" start={phase === 'typing'} />
                 </div>
+                <div className="intro-subtext-inner">
+                  <span className="intro-subtext-prefix">@</span>
+                  <TypeWriter text="zdybladeits" start={phase === 'typing'} />
+                </div>
               </motion.div>
             </div>
+            
 
             {/* Premium Loader */}
             <div className="intro-loader-container">
