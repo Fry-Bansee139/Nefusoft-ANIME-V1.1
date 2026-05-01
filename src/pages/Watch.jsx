@@ -146,7 +146,7 @@ const Watch = () => {
           setAnime(res.data);
           setEpisodes(res.data.episode_list ||[]);
 
-          const shareTitle = `Tonton ${res.data.title} - NefuSoft`;
+          const shareTitle = `Tonton ${res.data.title} - Alfeent`;
           const shareDesc = res.data.synopsis ? res.data.synopsis.substring(0, 150) + '...' : 'Streaming anime subtitle Indonesia gratis.';
           const shareImg = res.data.image_poster || res.data.image_cover;
           
@@ -165,8 +165,8 @@ const Watch = () => {
 
     return () => {
       updateMetaTags(
-        'NefuSoft - Streaming Anime Sub Indo Gratis',
-        'Nonton ribuan anime subtitle Indonesia secara gratis tanpa gangguan iklan di NefuSoft dengan kualitas tinggi.',
+        'Alfeent - Streaming Anime Sub Indo Gratis',
+        'Nonton ribuan anime subtitle Indonesia secara gratis tanpa gangguan iklan di Alfeent dengan kualitas tinggi.',
         'https://raw.githubusercontent.com/alip-jmbd/alipp/main/icons-full.jpg'
       );
     };
@@ -403,7 +403,7 @@ const Watch = () => {
 
   const handleShare = async (platform) => {
     const url = window.location.href;
-    const textMsg = `Tonton ${anime?.title || 'Anime'} di NefuSoft, Gratis & Tanpa Iklan !!`;
+    const textMsg = `Tonton ${anime?.title || 'Anime'} di Alfeent, Gratis & Tanpa Iklan !!`;
     const encodedText = encodeURIComponent(textMsg);
     const encodedUrl = encodeURIComponent(url);
 
@@ -418,13 +418,13 @@ const Watch = () => {
           if (navigator.canShare({ files: [file] })) {
             await navigator.share({
               files: [file],
-              title: 'NefuSoft',
+              title: 'Alfeent',
               text: `${textMsg}\n\nLink: ${url}`,
             });
             return;
           }
         }
-        await navigator.share({ title: 'NefuSoft', text: textMsg, url });
+        await navigator.share({ title: 'Alfeent', text: textMsg, url });
       } catch (e) {}
     } else if (platform === 'copy') {
       try { 
