@@ -143,21 +143,17 @@ const IntroScreen = ({ onComplete }) => {
                   ))}
                 </div>
               </motion.h1>
-
-             <motion.div
-  initial={{ opacity: 0 }}
-  animate={phase === 'typing' || phase === 'exit' ? { opacity: 1 } : {}}
-  className="intro-subtext-container"
->
-  <div className="intro-subtext-inner" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-    <div style={{ display: 'inline-flex' }}>
-      <span className="intro-subtext-prefix">⊕</span>
-      <TypeWriter text="alfeent.vercel.app" start={phase === 'typing'} />
-    </div>
-  </div>
-</motion.div>
-            
-
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={phase === 'typing' || phase === 'exit' ? { opacity: 1 } : {}}
+                className="intro-subtext-container"
+              >
+                <div className="intro-subtext-inner">
+                  <span className="intro-subtext-prefix">⊕</span>
+                  <TypeWriter text="alfeent.vercel.app" start={phase === 'typing'} />
+                </div>
+              </motion.div>
+            </div>
             {/* Premium Loader */}
             <div className="intro-loader-container">
               <motion.div
