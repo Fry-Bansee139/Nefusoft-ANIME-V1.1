@@ -141,7 +141,7 @@ const Home = () => {
 
   const handleShare = async (platform) => {
     const url = window.location.href;
-    const text = 'Ajak temanmu nonton anime favorit bareng di Alfeent, gratis dan tanpa iklan!!';
+    const text = 'Ajak temanmu nonton anime favorit bareng di AlfeentXD, gratis dan tanpa iklan!!';
     const encodedText = encodeURIComponent(text);
     
     if (platform === 'api') {
