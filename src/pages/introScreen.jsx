@@ -142,18 +142,18 @@ const IntroScreen = ({ onComplete }) => {
                 </div>
               </motion.h1>
 
-              <motion.div
-                initial={{ opacity: 0 }}
+             <motion.div
+  initial={{ opacity: 0 }}
   animate={phase === 'typing' || phase === 'exit' ? { opacity: 1 } : {}}
   className="intro-subtext-container"
-  style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}
+  style={{ display: 'block', textAlign: 'center' }}   // override flex menjadi block
 >
-  <div className="intro-subtext-inner">
+  <div className="intro-subtext-inner" style={{ display: 'inline-flex', margin: '0 auto' }}>
     <span className="intro-subtext-prefix">⊕</span>
     <TypeWriter text="alfeent.vercel.app" start={phase === 'typing'} />
   </div>
-  <br />
-  <div className="intro-subtext-inner">
+  <br />   // baris baru
+  <div className="intro-subtext-inner" style={{ display: 'inline-flex', margin: '0 auto' }}>
     <span className="intro-subtext-prefix">@</span>
     <TypeWriter text="zdybladeits" start={phase === 'typing'} />
   </div>
