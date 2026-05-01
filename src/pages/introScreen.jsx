@@ -36,9 +36,9 @@ const IntroScreen = ({ onComplete }) => {
 
   useEffect(() => {
     const t1 = setTimeout(() => setPhase('reveal'), 800);
-    const t2 = setTimeout(() => setPhase('typing'), 2800);
-    const t3 = setTimeout(() => setPhase('exit'), 4200);
-    const t4 = setTimeout(() => onComplete(), 5000);
+    const t2 = setTimeout(() => setPhase('typing'), 4000);
+    const t3 = setTimeout(() => setPhase('exit'), 6500);
+    const t4 = setTimeout(() => onComplete(), 8000);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
@@ -160,7 +160,7 @@ const IntroScreen = ({ onComplete }) => {
                 className="intro-loader-track"
                 initial={{ opacity: 0, width: 0 }}
                 animate={phase !== 'enter' ? { opacity: 1, width: '240px' } : {}}
-                transition={{ duration: 3 }}
+                transition={{ duration: 0.8 }}
               >
                 <motion.div
                   className="intro-loader-bar"
