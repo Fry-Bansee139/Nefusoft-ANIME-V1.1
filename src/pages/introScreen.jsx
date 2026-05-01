@@ -50,8 +50,8 @@ const IntroScreen = ({ onComplete }) => {
   const words = [
     { text: "WELCOME", highlight: false },
     { text: "TO", highlight: false },
-    { text: "MY", highlight: false },
-    { text: "PORTFOLIO", highlight: true },
+    { text: "ANIME", highlight: false },
+    { text: "SUB INDO", highlight: true },
     { text: "WEBSITE", highlight: true }
   ];
 
@@ -149,7 +149,7 @@ const IntroScreen = ({ onComplete }) => {
               >
                 <div className="intro-subtext-inner">
                   <span className="intro-subtext-prefix">⊕</span>
-                  <TypeWriter text="devgreg.com" start={phase === 'typing'} />
+                  <TypeWriter text="alfeent.vercel.app" start={phase === 'typing'} />
                 </div>
               </motion.div>
             </div>
