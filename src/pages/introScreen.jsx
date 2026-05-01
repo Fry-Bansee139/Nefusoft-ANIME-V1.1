@@ -143,21 +143,24 @@ const IntroScreen = ({ onComplete }) => {
               </motion.h1>
 
              <motion.div
-               initial={{ opacity: 0 }}
-               animate={phase === 'typing' || phase === 'exit' ? { opacity: 1 } : {}}
-  className="intro-subtext-container">
-               <div className="intro-subtext-inner" style={{ display: 'inline-flex', margin: '0 auto' }}>
-                 <span className="intro-subtext-prefix">⊕</span>
-                 <TypeWriter text="alfeent.vercel.app" start={phase === 'typing'} />
-              </div>
-               <h2>
-               </h2>
-              <div className="intro-subtext-inner" style={{ display: 'inline-flex', margin: '0 auto' }}>
-                <span className="intro-subtext-prefix">@</span>
-                <TypeWriter text="zdybladeits" start={phase === 'typing'} />
-              </div>
-              </motion.div>
-            </div>
+  initial={{ opacity: 0 }}
+  animate={phase === 'typing' || phase === 'exit' ? { opacity: 1 } : {}}
+  className="intro-subtext-container"
+>
+  {/* URL Section */}
+  <div className="intro-subtext-inner" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+    <div style={{ display: 'inline-flex' }}>
+      <span className="intro-subtext-prefix">⊕</span>
+      <TypeWriter text="alfeent.vercel.app" start={phase === 'typing'} />
+    </div>
+
+    {/* Username Section - This will be on a new line */}
+    <div style={{ display: 'inline-flex' }}>
+      <span className="intro-subtext-prefix">@</span>
+      <TypeWriter text="zdybladeits" start={phase === 'typing'} />
+    </div>
+  </div>
+</motion.div>
             
 
             {/* Premium Loader */}
