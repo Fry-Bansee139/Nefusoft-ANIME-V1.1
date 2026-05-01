@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import IntroScreen from '../IntroScreen.jsx'; // Sesuaikan path dengan lokasi file IntroScreen.jsx
+import IntroScreen from './IntroScreen.jsx'; // Sesuaikan path dengan lokasi file IntroScreen.jsx
 
 const Welcome = () => {
   const navigate = useNavigate();
