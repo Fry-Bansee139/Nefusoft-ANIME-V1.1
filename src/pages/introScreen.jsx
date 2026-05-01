@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code2, Layers, Zap } from 'lucide-react';
-import '../IntroScreen.css';
+import './IntroScreen.css';
 
 const TypeWriter = ({ text, start }) => {
   const [displayed, setDisplayed] = useState('');
