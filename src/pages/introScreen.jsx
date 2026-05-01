@@ -143,21 +143,21 @@ const IntroScreen = ({ onComplete }) => {
               </motion.h1>
 
              <motion.div
-  initial={{ opacity: 0 }}
-  animate={phase === 'typing' || phase === 'exit' ? { opacity: 1 } : {}}
-  className="intro-subtext-container"
-  style={{ display: 'block', textAlign: 'center' }}   // override flex menjadi block
->
-  <div className="intro-subtext-inner" style={{ display: 'inline-flex', margin: '0 auto' }}>
-    <span className="intro-subtext-prefix">⊕</span>
-    <TypeWriter text="alfeent.vercel.app" start={phase === 'typing'} />
-  </div>
-  <br />   // baris baru
-  <div className="intro-subtext-inner" style={{ display: 'inline-flex', margin: '0 auto' }}>
-    <span className="intro-subtext-prefix">@</span>
-    <TypeWriter text="zdybladeits" start={phase === 'typing'} />
-  </div>
-</motion.div>
+               initial={{ opacity: 0 }}
+               animate={phase === 'typing' || phase === 'exit' ? { opacity: 1 } : {}}
+  className="intro-subtext-container">
+               <div className="intro-subtext-inner" style={{ display: 'inline-flex', margin: '0 auto' }}>
+                 <span className="intro-subtext-prefix">⊕</span>
+                 <TypeWriter text="alfeent.vercel.app" start={phase === 'typing'} />
+              </div>
+               <h2>
+               </h2>
+              <div className="intro-subtext-inner" style={{ display: 'inline-flex', margin: '0 auto' }}>
+                <span className="intro-subtext-prefix">@</span>
+                <TypeWriter text="zdybladeits" start={phase === 'typing'} />
+              </div>
+              </motion.div>
+            </div>
             
 
             {/* Premium Loader */}
