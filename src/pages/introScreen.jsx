@@ -48,13 +48,11 @@ const IntroScreen = ({ onComplete }) => {
   }, [onComplete]);
 
   const words = [
-    { text: "WELCOME", highlight: false },
-    { text: "TO", highlight: false },
+    { text: "DZIKRY", highlight: false },
+    { text: "HAMIDAN", highlight: false },
     { text: "ANIME", highlight: false },
     { text: "SUB INDO", highlight: true },
-    { text: "WEBSITE", highlight: true },
-    { text: "DZIKRY", highlight: true },
-    { text: "HAMIDAN", highlight: true }
+    { text: "WEBSITE", highlight: true }
   ];
 
   const containerVariants = {
