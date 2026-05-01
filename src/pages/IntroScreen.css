@@ -1,3 +1,10 @@
+:root {
+  --bg-deep: #0a0a0c;
+  --accent: #00d4ff;
+  --text-muted: #9ca3af;
+  --primary: #0066ff;
+  --font-mono: 'Courier New', monospace;
+}
 /* ── Intro Screen ───────────────────────────────────────── */
 .intro-screen {
   position: fixed;
