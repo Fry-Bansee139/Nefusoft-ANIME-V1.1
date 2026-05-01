@@ -1,33 +1,29 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import IntroScreen from './IntroScreen'; // Sesuaikan path dengan lokasi file IntroScreen.jsx
 
 const Welcome = () => {
   const navigate = useNavigate();
-  const [showIntro, setShowIntro] = useState(true); // State untuk mengontrol tampilan intro
   const [searchQuery, setSearchQuery] = useState('');
-  const [liveResults, setLiveResults] = useState([]);
+  const[liveResults, setLiveResults] = useState([]);
   const [isLiveLoading, setIsLiveLoading] = useState(false);
 
-  // Effect untuk scroll ke atas
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  },[]);
 
-  // Effect untuk pencarian live
   useEffect(() => {
-    if (searchQuery.length < 3) {
-      setLiveResults([]);
-      return;
+    if (searchQuery.length < 3) { 
+      setLiveResults([]); 
+      return; 
     }
     let isMounted = true;
     const timer = setTimeout(async () => {
       setIsLiveLoading(true);
       try {
         const res = await fetch(`/api/v1/search?q=${encodeURIComponent(searchQuery)}`).then(r => r.json());
-        if (isMounted) setLiveResults(res.data || []);
-      } catch (e) {
-        if (isMounted) setLiveResults([]);
+        if (isMounted) setLiveResults(res.data ||[]);
+      } catch (e) { 
+        if (isMounted) setLiveResults([]); 
       } finally {
         if (isMounted) setIsLiveLoading(false);
       }
@@ -38,24 +34,18 @@ const Welcome = () => {
     };
   }, [searchQuery]);
 
-  const navLinks = useMemo(() => [
+  const navLinks = useMemo(() =>[
     { label: 'Home', path: '/home', icon: <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/> },
     { label: 'Explore', path: '/explore', icon: <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/> },
     { label: 'Ongoing', path: '/ongoing', icon: <path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/> },
     { label: 'Schedule', path: '/schedule', icon: <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/> }
-  ], []);
+  ],[]);
 
-  // Jika intro belum selesai, render IntroScreen
-  if (showIntro) {
-    return <IntroScreen onComplete={() => setShowIntro(false)} />;
-  }
-
-  // Konten Welcome setelah intro selesai
   return (
     <div className="min-h-screen bg-[#0a0a0c] flex flex-col text-white">
       <nav className="w-full h-24 px-6 md:px-12 flex items-center justify-between shrink-0 z-50">
         <div className="flex items-center cursor-pointer" onClick={() => navigate('/home')}>
-          <img src="/img/nefusoft.webp" alt="Alfeent Logo" width="100" height="100" className="w-16 md:w-24 object-contain" fetchPriority="high" />
+          <img src="/img/nefusoft.webp" alt="AlfeentXD Logo" width="100" height="100" className="w-16 md:w-24 object-contain" fetchPriority="high" />
         </div>
         <div className="flex gap-4 md:gap-6 bg-transparent border border-white/10 px-5 py-2.5 rounded-full shadow-lg">
           {navLinks.map((link, i) => (
@@ -100,7 +90,7 @@ const Welcome = () => {
 
         <div className="mt-16 mb-24 flex flex-col items-center text-center px-6">
           <img src="/img/kaguya.webp" alt="Kaguya" width="120" height="120" loading="lazy" decoding="async" className="w-28 md:w-32 object-contain mb-6 drop-shadow-2xl" />
-          <h2 className="text-3xl md:text-5xl font-[900] tracking-tighter mb-5">Alfe<span className="text-[#F6CF80]">entXD</span></h2>
+          <h2 className="text-3xl md:text-5xl font-[900] tracking-tighter mb-5">Nefu<span className="text-[#F6CF80]">Soft</span></h2>
           <p className="text-white/60 text-sm md:text-base font-medium leading-relaxed max-w-2xl">AlfeentXD menyediakan akses menonton ribuan judul anime secara gratis tanpa gangguan iklan. Nikmati nonton anime subtitle indonesia dengan kualitas 360p hingga 1080p secara gratis dan nyaman!!</p>
         </div>
       </main>
