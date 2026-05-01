@@ -160,13 +160,13 @@ const IntroScreen = ({ onComplete }) => {
                 className="intro-loader-track"
                 initial={{ opacity: 0, width: 0 }}
                 animate={phase !== 'enter' ? { opacity: 1, width: '240px' } : {}}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 3 }}
               >
                 <motion.div
                   className="intro-loader-bar"
                   initial={{ width: '0%' }}
                   animate={{
-                    width: (phase === 'exit' || phase === 'typing') ? '1000%' : '0%'
+                    width: (phase === 'exit' || phase === 'typing') ? '100%' : '0%'
                   }}
                   transition={{ 
                     width: { duration: phase === 'typing' ? 1.5 : 2.5, ease: [0.65, 0, 0.35, 1] }
