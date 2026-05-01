@@ -36,7 +36,7 @@ const IntroScreen = ({ onComplete }) => {
 
   useEffect(() => {
     const t1 = setTimeout(() => setPhase('reveal'), 800);
-    const t2 = setTimeout(() => setPhase('typing'), 4000);
+    const t2 = setTimeout(() => setPhase('typing'), 5000);
     const t3 = setTimeout(() => setPhase('exit'), 6500);
     const t4 = setTimeout(() => onComplete(), 8000);
     return () => {
@@ -52,7 +52,9 @@ const IntroScreen = ({ onComplete }) => {
     { text: "TO", highlight: false },
     { text: "ANIME", highlight: false },
     { text: "SUB INDO", highlight: true },
-    { text: "WEBSITE", highlight: true }
+    { text: "WEBSITE", highlight: true },
+    { text: "DZIKRY", highlight: true },
+    { text: "HAMIDAN", highlight: true }
   ];
 
   const containerVariants = {
@@ -147,17 +149,10 @@ const IntroScreen = ({ onComplete }) => {
   animate={phase === 'typing' || phase === 'exit' ? { opacity: 1 } : {}}
   className="intro-subtext-container"
 >
-  {/* URL Section */}
   <div className="intro-subtext-inner" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
     <div style={{ display: 'inline-flex' }}>
       <span className="intro-subtext-prefix">⊕</span>
       <TypeWriter text="alfeent.vercel.app" start={phase === 'typing'} />
-    </div>
-
-    {/* Username Section - This will be on a new line */}
-    <div style={{ display: 'inline-flex' }}>
-      <span className="intro-subtext-prefix">@</span>
-      <TypeWriter text="zdybladeits" start={phase === 'typing'} />
     </div>
   </div>
 </motion.div>
